@@ -74,7 +74,7 @@ public class DKPopoverViewController: UIViewController {
         func arrowImage() -> UIImage {
             UIGraphicsBeginImageContextWithOptions(CGSize(width: arrowWidth, height: arrowHeight), false, UIScreen.mainScreen().scale)
             
-            let context = UIGraphicsGetCurrentContext()
+            let context = UIGraphicsGetCurrentContext()!
             UIColor.clearColor().setFill()
             CGContextFillRect(context, CGRect(x: 0, y: 0, width: arrowWidth, height: arrowHeight))
             
@@ -90,7 +90,7 @@ public class DKPopoverViewController: UIViewController {
             CGContextSetFillColorWithColor(context, UIColor.whiteColor().CGColor)
             CGContextDrawPath(context, CGPathDrawingMode.Fill)
 
-            let arrowImage = UIGraphicsGetImageFromCurrentImageContext()
+            let arrowImage = UIGraphicsGetImageFromCurrentImageContext()!
             UIGraphicsEndImageContext()
             
             return arrowImage
